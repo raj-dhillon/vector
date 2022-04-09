@@ -128,6 +128,41 @@ int main(int argc, char* argv[]) {
 //    assert(g.EuclidianDistance(h) == sqrt(25.81));
 //    assert(g.EuclidianDistance(g) == 0);
 
+
+    // Testing operator-()const
+    double signFlipData1[] = {2, 4, 6, 8};
+    double signFlipData2[] = {4, 6, 5, 4};
+    double signFlipData3[] = {10, 2, 7, 4};
+    Vector testerSignFlip1(4, signFlipData1);
+    Vector flippedSign1 = -testerSignFlip1;
+    assert((flippedSign1[0] == -2) && (flippedSign1[1] == -4) && (flippedSign1[2] == -6) && (flippedSign1[3] == -8));
+
+    Vector testerSignFlip2(4, signFlipData2);
+    Vector flippedSign2 = -testerSignFlip2;
+    assert((flippedSign2[0] == -4) && (flippedSign2[1] == -6) && (flippedSign2[2] == -5) && (flippedSign2[3] == -4));
+
+    Vector testerSignFlip3(4, signFlipData3);
+    Vector flippedSign3 = -testerSignFlip3;
+    assert((flippedSign3[0] == -10) && (flippedSign3[1] == -2) && (flippedSign3[2] == -7) && (flippedSign3[3] == -4));
+
+    // Testing operator*()const
+    double multiData1[] = {2, 4, 6, 8};
+    double multiData2[] = {4, 6, 5, 4};
+    double multiData3[] = {10, 2, 7, 4};
+    Vector multiTester1(4, multiData1);
+    Vector multiTransf1 = multiTester1 * 3;
+    assert((multiTransf1[0] == 6) && (multiTransf1[1] == 12) && (multiTransf1[2] == 18) && (multiTransf1[3] == 24));
+
+    Vector multiTester2(4, multiData2);
+    Vector multiTransf2 = multiTester2 * 3;
+    assert((multiTransf2[0] == 12) && (multiTransf2[1] == 18) && (multiTransf2[2] == 15) && (multiTransf2[3] == 12));
+
+    Vector multiTester3(4, multiData3);
+    Vector multiTransf3 = multiTester3 * 4;
+    assert((multiTransf3[0] == 40) && (multiTransf3[1] == 8) && (multiTransf3[2] == 28) && (multiTransf3[3] == 16));
+
+
+
     cout << "All unit tests passed" << endl;
 
     return 0;

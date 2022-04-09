@@ -196,3 +196,18 @@ istream &Vector::Read(istream &input) {
     return input;
 }
 
+Vector Vector::operator-() const {
+    Vector newVec(_size);
+    for (int i = 0; i < _size; i++) {
+        newVec._data[i] = _data[i] * -1;
+    }
+    return newVec;
+}
+
+Vector Vector::operator*(double val) const {
+    Vector newVec(_size);
+    for (int i = 0; i < _size; i++) {
+        newVec._data[i] = _data[i] * val;
+    }
+    return newVec;
+}
